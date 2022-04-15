@@ -62,6 +62,12 @@
 
 **4. Server starts running on port 3000 (http://localhost:3000)**
 
+**5. Once viewed, kill the docker containers using:**
+
+  ```
+  docker-compose down
+  ```
+
 ---
 
 ## Contributing
