@@ -21,6 +21,14 @@ services:
       - MONGO_URI= mongodb://my_mongo_db:27017
     depends_on:
       - my_mongo_db
+  my_mongo_interface:
+    container_name: my_mongo_gui_container
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=my_db_container
 
 volumes:
   my_mongo_db: {}
