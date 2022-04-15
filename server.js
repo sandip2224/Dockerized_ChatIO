@@ -3,7 +3,7 @@ const path = require('path')
 const http = require('http')
 const colors = require("colors")
 const socketio = require('socket.io')
-require("dotenv").config({ path: "./.env" })
+// require("dotenv").config({ path: "./.env" })
 
 const formatMessage = require('./frontend/utils/messages')
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./frontend/utils/users')
@@ -34,9 +34,9 @@ io.on('connection', (socket) => {
         socket.join(user.room)
 
         // Welcome adminMessage for client alone who connects
-        socket.emit('message', formatMessage('Admin', `Welcome to ChatIO ${user.username}!!`))
+        socket.emit('message', formatMessage('Admin', `Welcome to ChatIO  ${user.username}!!`))
 
-        // Broadcast to everyone else when user connects
+        // Broadcast to everyone else when user connects 
         socket.broadcast.to(user.room).emit('message', formatMessage('Admin', `${user.username} has joined the chat!!`))
 
         // Triggered during keypress event on client side
@@ -47,7 +47,6 @@ io.on('connection', (socket) => {
         socket.on('stoptype', (msg) => {
             socket.broadcast.to(user.room).emit('type', msg)
         })
-
         // Send users and room info to every client in a room
         io.to(user.room).emit('roomUsers', {
             room: user.room,

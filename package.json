@@ -1,11 +1,11 @@
 {
   "name": "chatio",
   "version": "2.0.0",
-  "description": "Real-time chat application with persistent chat history functionality",
+  "description": "Real-time chat application with persistent chat history functionality on dockerized Mongo",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon -L server"
   },
   "author": "Sandipan Das",
   "license": "ISC",
