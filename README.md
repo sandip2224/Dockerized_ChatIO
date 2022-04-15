@@ -10,10 +10,6 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## 🎉Live Status
-
-The website is live. Check it out [here](https://chatio64.herokuapp.com)
-
 ## Built With
 
 - Frontend
@@ -26,10 +22,10 @@ The website is live. Check it out [here](https://chatio64.herokuapp.com)
    - Mongoose
    - Socket.io
 - Database
-   - MongoDB Atlas
+   - Mongo (Docker Image)
 ---
 
-## 🔥 Screenshots
+<!-- ## 🔥 Screenshots
 
 | Landing Page |
 | - |
@@ -38,12 +34,11 @@ The website is live. Check it out [here](https://chatio64.herokuapp.com)
 | Chat Page |
 | - |
 | ![media/2.PNG](media/2.PNG) |
-
+ -->
 ## 🚩New Updates
 
 - Added `{user} is typing` functionality.
-- Added persistent chat storage in MongoDB Atlas
-
+- Added persistent chat storage on Mongo Docker
 
 <!-- BUILT WITH -->  
 
@@ -54,27 +49,19 @@ The website is live. Check it out [here](https://chatio64.herokuapp.com)
    ```
    git clone https://github.com/sandip2224/ChatIO.git
    cd ChatIO/
-   ```  
-   
-**2. Install required dependencies/dev dependencies using**  
-
    ```
-   npm install
-   npm install -D
-   ```  
-**3. Create a .env file in root directory and add the following key-value pair**  
+**2. Build the docker image from Dockerfile and setup the Mongo and ChatIO containers using:**  
 
   ```
-  MONGO_URI=<Unique MongoDB Cluster URL>
+  docker-compose up
   ```
-
-
-**4. Run server in development mode at `localhost:3000` using**  
-
-  ```
-  npm run dev
-  ```
+  - Use **-d flag** to run the containers in detached mode (optional) and view the container logs using the folllowing commands:
   
+  1. View all running containers using: **docker ps**
+  2. View the docker logs for each container using: **docker logs <container_id>**
+
+**4. Server starts running on port 3000 (http://localhost:3000)**
+
 ---
 
 ## Contributing
