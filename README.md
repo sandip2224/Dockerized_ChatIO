@@ -61,6 +61,7 @@
   2. View the docker logs for each container using: **docker logs <container_id>**
 
 **4. Server starts running on port 3000 (http://localhost:3000)**
+   - MongoDB GUI starts on **http://localhost:8081**
 
 **5. Once viewed, kill the docker containers using:**
 
