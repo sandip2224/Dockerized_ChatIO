@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  #MongoDB service
+  my_mongo_db:
+    container_name: my_db_container
+    image: mongo:latest
+    restart: always
+    ports:
+      - "2717:27017"
+    volumes:
+      - my_mongo_db:/data/db
+  my_chat_api:
+    container_name: my_chat_container
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - MONGO_URI= mongodb://my_mongo_db:27017
+    depends_on:
+      - my_mongo_db
+
+volumes:
+  my_mongo_db: {}
